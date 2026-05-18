@@ -28,10 +28,10 @@ async fn handle_connection(
 
                         if let Some(text) = msg.as_text() {
 
-                            println!("Message from {}: {}", addr, text);
+                            println!("From client {} {:?}", addr, text);
 
                             let broadcast_msg =
-                                format!("{} says: {}", addr, text);
+                                format!("{}: {}", addr, text);
 
                             let _ = bcast_tx.send(broadcast_msg);
                         }
